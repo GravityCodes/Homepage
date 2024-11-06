@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'roboto-mono';
+    src: url("../../assets/RobotoMono-VariableFont_wght.woff2") format('woff2-variations');
+    font-weight: 100 700;
+    font-display: swap;
+}
+
+
+body {
+    font-family: roboto-mono;
+}
+
+
