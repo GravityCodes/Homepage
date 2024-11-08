@@ -8,15 +8,115 @@
 <body>
     <section id="hero">
         <div id="portrait-container">
-            <img src="../assets/self.jpg" alt="Myself in a colorful parking lot.">
-            <h2>Johan Mesa</h2>
+            <img src="./assets/self.jpg" alt="Myself in a colorful parking lot.">
+            <h2>JOHAN MESA </h2>
         </div>
-        <div id="about-me">
-            <h1>About Me</h1>
-            <p>
-                Hello!👋🏽 My name is Johan Mesa. I am a passionate fullstack software developer. 
+        <div id="about-me" tabindex="0">
+            <div id="about-me-text-container">
+                <h1 tabindex="0">About Me:</h1>
+            </div>
+            
+            <p tabindex="0">
+                Hello!<span class="wave-emoji"> 👋🏽   </span>My name is Johan Mesa. I am a passionate fullstack software developer based in Boston. I am ready to start innovating and debugging with a team.
             </p>
+
+            <div id="icons">    
+             <img class="github-icon" src="./assets/svg/github.svg" alt="github" />
+             <img class="linkedIn-icon" src="./assets/svg/linkedin.svg" alt="linkedin">   
+            </div>
         </div>
     </section>
+
+    <main id="my-work-section">
+        <h2>
+            My Work
+        </h2>
+        
+        <div id="my-work-container">
+
+            <div class="project-container">
+                <img src="./assets/projects/weather-app.png" alt="weather app preview">
+                <div class="project-details">
+                    <div class="project-title">
+                        <h3> Weather App</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/GravityCodes/weather-app"><img src="./assets/svg/github.svg" alt="github"></a>
+                            <a href="https://gravitycodes.github.io/weather-app/" target="_blank"><img src="./assets/svg/external-link.svg" alt="external-link"></a>
+                        </div>
+                    </div>
+                    <p>This project utilizes an api to get information about the weather. Handled with javascript promises.</p>
+                </div>
+                
+            </div>
+            <div class="project-container">
+                <img src="./assets/projects/todo-list.png" alt="todo list preview">
+                <div class="project-details">
+                    <div class="project-title">
+                        <h3>To-Do List</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/GravityCodes/ToDoList"><img src="./assets/svg/github.svg" alt="github"></a>
+                            <a href="https://gravitycodes.github.io/ToDoList/" target="_blank"><img src="./assets/svg/external-link.svg" alt="external-link"></a>
+                        </div>
+                    </div>
+                    <p> This was created to utilize my understanding of code coupling. Following OOP principles. </p>
+                </div>
+            </div>
+            <div class="project-container">
+                <img src="./assets/projects/tic-tac-toe.png" alt="">
+              <div class="project-details">
+                    <div class="project-title">
+                        <h3>Tic-tac-toe</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/GravityCodes/tictactoe"><img src="./assets/svg/github.svg" alt="github"></a>
+                            <a href="https://gravitycodes.github.io/tictactoe/" target="_blank"><img src="./assets/svg/external-link.svg" alt="external-link"></a>
+                        </div>
+                    </div>
+                    <p> This was created to practice creating factory functions and to use module patterns.</p>
+                </div>
+            </div>
+            <div class="project-container">
+                <img src="./assets/projects/etch-a-sketch.png" alt="etch-a-sketch preview">
+             <div class="project-details">
+                    <div class="project-title">
+                        <h3>Etch-a-Sketch</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/GravityCodes/Etch-a-Sketch"><img src="./assets/svg/github.svg" alt="github"></a>
+                            <a href="https://gravitycodes.github.io/Etch-a-Sketch/" target="_blank"><img src="./assets/svg/external-link.svg" alt="external-link"></a>
+                        </div>
+                    </div>
+                    <p>This was a simple project created to get a understanding of manipulating the DOM with javascript.</p>
+                </div>
+            </div>
+            <div class="project-container">
+                <img src="./assets/projects/battleship.png" alt="battleship preview">
+            <div class="project-details">
+                    <div class="project-title">
+                        <h3>BattleShip</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/GravityCodes/battleship-game"><img src="./assets/svg/github.svg" alt="github"></a>
+                            <a href="https://gravitycodes.github.io/battleship-game/" target="_blank"><img src="./assets/svg/external-link.svg" alt="external-link"></a>
+                        </div>
+                    </div>
+                    <p>Battleship was created to test my skills on testing javascript with jest.</p>
+                </div>
+            </div>
+            <div class="project-container">
+                <img src="./assets/projects/yourlibrary.png" alt="">
+              <div class="project-details">
+                    <div class="project-title">
+                        <h3>Personal Library</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/GravityCodes/YourLibrary"><img src="./assets/svg/github.svg" alt="github"></a>
+                            <a href="https://gravitycodes.github.io/YourLibrary/" target="_blank"><img src="./assets/svg/external-link.svg" alt="external-link"></a>
+                        </div>
+                    </div>
+                    <p>This project was created to play with javascript classes.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
 </body>
 </html>
