@@ -7,28 +7,30 @@
 </head>
 <body>
     <section id="hero">
-        <div id="portrait-container">
-            <img src="./assets/self.jpg" alt="Myself in a colorful parking lot.">
-            <h2>JOHAN MESA </h2>
-        </div>
-        <div id="about-me" tabindex="0">
-            <div id="about-me-text-container">
-                <h1 tabindex="0">About Me:</h1>
+            <div class="wrapper">
+                <div class="portrait-container">
+                    <img     src="./assets/self.jpg"
+                             srcset="./assets/self-800w.jpg 800w"
+                             alt="Myself in a colorful parking lot.">
+                    <!-- <h2>JOHAN MESA</h2> -->
+                </div>
+                <div class="about-me" tabindex="0">
+                    <div class="about-me-text-container">
+                        <h1 tabindex="0">About Me:</h1>
+                    </div>
+                    <p tabindex="0">
+                        Hello!<span class="wave-emoji"> 👋🏽 </span>My name is Johan Mesa. I am a passionate fullstack software developer based in Boston. I am ready to start innovating and debugging with a team.
+                    </p>
+                    <div class="icons">
+                        <a href="https://github.com/GravityCodes" target="_blank">
+                           <img class="github-icon" src="./assets/svg/github.svg" alt="github" />
+                       </a>
+                        <a href="https://www.linkedin.com/in/johan-mesa-47090115a/" target="_blank">
+                           <img class="linkedIn-icon" src="./assets/svg/linkedin.svg" alt="linkedin">
+                       </a>
+                    </div>
+                </div>
             </div>
-            
-            <p tabindex="0">
-                Hello!<span class="wave-emoji"> 👋🏽 </span>My name is Johan Mesa. I am a passionate fullstack software developer based in Boston. I am ready to start innovating and debugging with a team.
-            </p>
-
-            <div class="icons">    
-             <a href="https://github.com/GravityCodes" target="_blank">
-                <img class="github-icon" src="./assets/svg/github.svg" alt="github" />
-            </a>
-             <a href="https://www.linkedin.com/in/johan-mesa-47090115a/" target="_blank">
-                <img class="linkedIn-icon" src="./assets/svg/linkedin.svg" alt="linkedin">
-            </a>
-            </div>
-        </div>
     </section>
 
     <main id="my-work-section">
@@ -36,10 +38,10 @@
             My Work
         </h2>
         
-        <div id="my-work-container">
+        <div class="my-work-container">
 
             <div class="project-container">
-                <img src="./assets/projects/weather-app.png" alt="weather app preview">
+                <img    src="./assets/projects/weather-app.png" alt="weather app preview">
                 <div class="project-details">
                     <div class="project-title">
                         <h3> Weather App</h3>

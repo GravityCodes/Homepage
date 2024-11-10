@@ -21,12 +21,11 @@ body {
 }
 
 #hero {
-    display: flex;
     height: 100vh;
     width: 100%;
-    justify-content: center;
-    align-items: center;
     position: relative;
+
+
 }
 
 #hero::before {
@@ -41,56 +40,51 @@ body {
     position: absolute;
 }
 
-#portrait-container {
-    box-shadow: 0px 0px 10px var(--color-5) ;
-    position: relative;
+#hero .wrapper {
+    padding: 50px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
-#portrait-container img {
-    max-height: 500px;
-    min-width: 500px;
-    object-fit: cover;
-}
-
-#portrait-container h2 {
-    position: absolute;
-    bottom: 0px;
-    left: 8px;
-    color: var(--color-1);
-    text-shadow: 0px 1px 3px var(--color-3);
-    font-size: 80px;
-    opacity: 50%;
-
-}
-
-#about-me {
-    min-height: 400px;
-    max-width: 600px;
+.about-me {
     background-image: linear-gradient(153deg, var(--color-3) 27%, var(--color-4) 100%);
-    padding: 30px 20px;
     box-shadow: 0px 0px 10px var(--color-5);
+    width: min(100vw - 40px, 600px);
+    align-self: center;
+    padding: 20px;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 80px repeat(2, 1fr);
+    flex-direction: column;
 }
 
 
-
-
-#about-me #about-me-text-container {
-    grid-column: span 2;
-    transform: translateZ(1px);
-    border-bottom: 2px solid var(--color-5);
-    margin-bottom: 10px;
+.about-me::before {
+    content: "";
+    height: 90%;
+    width: 98%;
+    top: 12px;
+    left: 0px;
+    position: absolute;
+    transform: translateZ(-1px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--color-6);
     
 }
 
-#about-me-text-container h1 {
+
+.about-me .about-me-text-container {
+    transform: translateZ(1px);
+    border-bottom: 2px solid var(--color-5);
+    margin-bottom: 10px;
+}
+
+
+.about-me-text-container h1 {
     color: var(--color-1);
     text-shadow: 0px 1px 3px var(--color-3);
     font-size: 50px;
-    display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid var(--color-1);
@@ -112,8 +106,7 @@ body {
     }
 }
 
-#about-me p {
-    grid-column: span 2;
+.about-me p {
     color: var(--color-7);
     width: 100%;
     transform: translateZ(1px);
@@ -121,7 +114,7 @@ body {
     opacity: 0;
     animation-delay: 1s;
     animation-fill-mode: forwards;
-    font-size: 18px;
+    font-size: 1.1em;
 }
 
 @keyframes shine {
@@ -164,36 +157,54 @@ body {
    }
 }
 
-#about-me::before {
-    content: "";
-    height: 95%;
-    width: 98%;
-    top: 10px;
-    left: 0px;
-    position: absolute;
-    transform: translateZ(-1px);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: var(--color-6);
-    
-}
 
-.icons a {
-    width: 40px;
-}
 
-#about-me .icons {
-    grid-column: 2;
-    justify-self: center;
-    align-self: end;
+.icons {
     transform: translateZ(1px);
-    height: 40px;
-    width: 100%;
-    display: flex;
     gap: 20px;
+    padding: 10px;
+    display: flex;
     justify-content: end;
-    padding-right: 10px;
+    align-items: end;
 }
+
+.icons img {
+    height: 30px;
+}
+
+.portrait-container {
+    box-shadow: 0px 0px 10px var(--color-5) ;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    float: left;
+    align-self: center;
+}
+
+.portrait-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#portrait-container h2 {
+    color: var(--color-1);
+    bottom: 0px;
+    left: 18%;
+    text-shadow: 0px 1px 3px var(--color-3);
+    white-space: nowrap;
+    font-size: 4rem;
+    opacity: 50%;
+    user-select: none;
+    transform: translateZ(1px);
+    position: absolute;
+}
+
+#portrait-container h2:hover {
+    opacity: 100%;
+}
+
+
 
 /* My Work Section */
 
@@ -203,8 +214,7 @@ body {
     align-items: center;
     width: 100%;
     flex-direction: column;
-    height: 100vh;
-    padding: 0px 100px;
+    padding: 0px 10%;
 }
 
 #my-work-section h2 {
@@ -214,12 +224,12 @@ body {
     align-self: flex-start;
 }
 
-#my-work-container {
+.my-work-container {
     display: grid;
     height: 90%;
     width: 100%;
     grid-template-columns: repeat(3, minmax(150px, 1fr));
-    grid-template-rows: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(150px, 400px));
     justify-items: center;
     gap: 40px;
     padding: 50px 0px;
@@ -234,7 +244,7 @@ body {
 }
 
 .project-container img {
-    height: 60%;
+    height: 50%;
     width: 100%;
     object-fit: cover;
 }
@@ -266,9 +276,11 @@ body {
 /* Footer */
 
 footer {
-    height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    background-color: var(--color-4);
+    padding: 50px 10%;
+    height: 700px;
 }
 
 footer h2 {
@@ -280,6 +292,7 @@ footer h2 {
 footer p {
     font-size: 18px;
     color: var(--color-7);
+    
 }
 
 
@@ -290,18 +303,21 @@ footer form {
     flex-direction: column;
     padding: 40px 50px;
     gap: 20px;
+    box-shadow: 0px 0px 22px var(--color-5);
 }
 
 .form-left {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 50%;
     gap: 20px;
 }
 
 .form-field {
     display: flex;
     flex-direction: column;
+    
 }
 
 .form-field label {
@@ -328,15 +344,167 @@ footer form {
 footer .icons {
     display: flex;
     gap: 20px;
+    justify-content: start;
 }
 
 .form-right {
-    height: 100%;
+    width: 50%;
+    margin-left: 1rem;
 }
 
 .form-right img {
     height: 100%;
     width: 100%;
-    padding: 100px;
     object-fit: cover;
+}
+
+@media (max-width: 1391px){
+
+    .project-container img {
+        height: 50%;
+    }
+
+}
+
+@media (max-width: 1307px) {
+    .project-container img {
+        height: 40%;
+    }
+
+    .project-title {
+        font-size: .9em;
+    }
+}
+
+
+
+@media (max-width:1160px) {
+
+    .about-me {
+        margin: 0 auto;
+        margin-top: 300px;
+        width: min(100vw - 40px, 650px);
+        
+    }
+
+    .about-me::before {
+        left: 6px;
+        border-radius: 10px;
+
+    }
+
+    #hero .wrapper {
+        display: block;
+        padding-left: 15%;
+    }
+
+    .my-work-container {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        grid-template-rows: repeat(3, 300px);
+        justify-items: center;
+    }
+
+    .portrait-container {
+        height: 300px;
+        width: 300px;
+        float: left;
+        margin-top: 150px;
+        margin-right: 1rem;
+        z-index: 1;
+    }
+
+    .form-right img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover ;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width:900px) {
+    .portrait-container {
+        width: 100%;
+        margin-top: 0px;
+        margin-right: 0px;
+        z-index: 0;
+    }
+
+    #hero .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-left: 50px;
+    }
+
+    .project-title {
+        font-size: .8em;
+    }
+
+    .my-work-container {
+        grid-template-columns: repeat(1, minmax(150px, 1fr));
+        grid-template-rows: repeat(6, 300px);
+        justify-items: center;
+    }
+
+    .about-me {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        background-image: none;
+        box-shadow: none;
+    }
+
+    .about-me-text-container h1  {
+        font-size: 2em;
+        width: 180px;
+        margin: 0 auto;
+    }
+
+    .about-me::before {
+        visibility: hidden;
+    }
+
+    .icons {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    footer {
+        display: block;
+        padding: 0;
+    }
+
+    footer p {
+        padding: 0px 15%;
+        
+    }
+
+    footer form {
+        padding: 30px;
+    }
+
+    .form-left {
+        width: 100%;
+    }
+    .form-right {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .form-left * {
+        margin: 0 auto;
+    }
+
+    .form-field:last-child {
+        margin: 0;
+    }
+    
+    .form-right img {
+        margin-left: 0;
+    }
+    
+    #my-work-section h2 {
+
+        align-self: center;
+    }
 }
