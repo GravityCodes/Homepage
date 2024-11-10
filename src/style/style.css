@@ -21,10 +21,10 @@ body {
 }
 
 #hero {
-    height: 100vh;
+
     width: 100%;
     position: relative;
-
+    height: 980px;
 
 }
 
@@ -380,6 +380,10 @@ footer .icons {
 
 @media (max-width:1160px) {
 
+    #hero {
+        height: 800px;
+    }
+
     .about-me {
         margin: 0 auto;
         margin-top: 300px;
@@ -429,6 +433,8 @@ footer .icons {
         z-index: 0;
     }
 
+    
+    
     #hero .wrapper {
         display: flex;
         flex-direction: column;
