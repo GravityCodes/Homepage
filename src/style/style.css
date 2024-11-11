@@ -46,6 +46,9 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    max-width: 1239px;
+    margin: 0 auto;
 }
 
 .about-me {
@@ -187,24 +190,50 @@ body {
     object-fit: cover;
 }
 
-#portrait-container h2 {
+.portrait-container h2 {
     color: var(--color-1);
     bottom: 0px;
-    left: 18%;
+    left: 15%;
     text-shadow: 0px 1px 3px var(--color-3);
     white-space: nowrap;
-    font-size: 4rem;
+    font-size: 3rem;
     opacity: 50%;
     user-select: none;
     transform: translateZ(1px);
     position: absolute;
 }
 
-#portrait-container h2:hover {
+.portrait-container h2:hover {
     opacity: 100%;
 }
 
+.down-arrows {
+    margin-top: auto;
+    position: relative;
+}
 
+.down-arrows img:first-child {
+    height: 100px;
+    position: absolute;
+    right: 20px;
+    top: -5px;
+    opacity: 0;
+    animation: arrow-breath 3s ease-in-out infinite;
+}
+
+.down-arrows img:nth-child(2) {
+    height: 140px;
+    opacity: 0;
+    animation: arrow-breath 3s ease-in-out infinite;
+    animation-delay: .3s;
+    
+}
+
+@keyframes arrow-breath {
+    50%{
+        opacity: 50%;
+    }
+}
 
 /* My Work Section */
 
@@ -215,6 +244,7 @@ body {
     width: 100%;
     flex-direction: column;
     padding: 0px 10%;
+
 }
 
 #my-work-section h2 {
@@ -240,8 +270,57 @@ body {
     width: 90%;
     background: rgb(131,42,57);
     background: linear-gradient(130deg, rgba(131,42,57,1) 0%, rgba(176,57,77,1) 35%, rgba(244,78,114,1) 100%);
-    box-shadow: 0px 0px 22px var(--color-5);
+    transform: translateY(-50px);
+
+    transition: box-shadow 1s;
 }
+
+.project-container:hover {
+    box-shadow: 0px 0px 10px var(--color-1);
+}
+
+
+.fall-in-place {
+    animation: fallInPlace 1.2s cubic-bezier(.5,.96,.76,1.28) 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fallInPlace {
+    from{
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(10px);
+    }
+    80%{
+        transform: translateY(-10px);
+    }
+    90% {
+        transform: translateY(10px);
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 100%;
+    }
+}
+
+.fall-out-place {
+    animation: fallOutPlace 0.5s ease-in-out 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fallOutPlace {
+    from{
+        opacity: 1;
+        transform: translateY(20px);
+    }
+    to{
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+}
+
+
 
 .project-container img {
     height: 50%;
@@ -280,7 +359,7 @@ footer {
     justify-content: space-between;
     background-color: var(--color-4);
     padding: 50px 10%;
-    height: 700px;
+    height: max(100vh,100% - 722.656px);
 }
 
 footer h2 {
@@ -309,7 +388,7 @@ footer form {
 .form-left {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    
     width: 50%;
     gap: 20px;
 }
@@ -381,12 +460,12 @@ footer .icons {
 @media (max-width:1160px) {
 
     #hero {
-        height: 800px;
+        height: 900px;
     }
 
     .about-me {
         margin: 0 auto;
-        margin-top: 300px;
+        margin-top: 150px;
         width: min(100vw - 40px, 650px);
         
     }
@@ -394,13 +473,18 @@ footer .icons {
     .about-me::before {
         left: 6px;
         border-radius: 10px;
-
     }
 
     #hero .wrapper {
         display: block;
-        padding-left: 15%;
+        
     }
+
+    .down-arrows {
+        width: 140px;
+        margin: 0 auto;
+    }
+
 
     .my-work-container {
         grid-template-columns: repeat(2, minmax(150px, 1fr));
@@ -412,9 +496,14 @@ footer .icons {
         height: 300px;
         width: 300px;
         float: left;
-        margin-top: 150px;
         margin-right: 1rem;
         z-index: 1;
+    }
+
+    .portrait-container h2 {
+        top: 80px;
+        left: 250px;
+        font-size: 3rem;
     }
 
     .form-right img {
@@ -424,6 +513,7 @@ footer .icons {
         margin-left: 1rem;
     }
 }
+
 
 @media (max-width:900px) {
     .portrait-container {
@@ -440,10 +530,17 @@ footer .icons {
         flex-direction: column;
         justify-content: start;
         padding-left: 50px;
+        flex-wrap: nowrap;
     }
 
     .project-title {
         font-size: .8em;
+    }
+    
+    .portrait-container h2 {
+        top: 80%;
+        left: calc(50% - 100px);
+        font-size: 2rem;
     }
 
     .my-work-container {
