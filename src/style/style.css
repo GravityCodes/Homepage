@@ -347,8 +347,15 @@ body {
     color: var(--color-1);
 }
 
-.project-links a {
-    width: 25px;
+.project-links {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.project-links a img {
+
+    height: 25px;
     display: inline-block;
 }
 
